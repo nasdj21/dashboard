@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
-import { Paper } from "@mui/material";
+import { Typography, Paper} from "@mui/material";
+
 
 interface Indicator{
     title?: String;
