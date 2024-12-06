@@ -5,7 +5,7 @@ import { useState, useRef } from 'react';
 
 export default function ControlWeather(){
 
-    let[selected, setSelected] =  useState(-1);
+    let[, setSelected] =  useState(-1);
     const descriptionRef = useRef<HTMLDivElement>(null)
 
      {/* Arreglo de objetos */}
