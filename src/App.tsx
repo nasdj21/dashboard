@@ -62,17 +62,20 @@ function App() {
       const xml = parser.parseFromString(savedTextHTML, "application/xml")
       const itemArray = Array.from(xml.getElementsByTagName("time")) //Para obtener los elementos de tipo time
 
-      const dataToItems: Item[] = itemArray.slice(0, 6).map((tiempo) => {
+      const dataToItems: Item[] = itemArray.slice(0, 7).map((tiempo) => {
         const fullDateStart = tiempo.getAttribute("from") || "";
         const fullDateEnd = tiempo.getAttribute("to") || "";
         const dateStart = fullDateStart.split("T")[1]?.slice(0, 5) || ""; // Obtiene solo la hora
         const dateEnd = fullDateEnd.split("T")[1]?.slice(0, 5) || ""; // Obtengo solo la hora 
+
+         // Combina las horas de inicio y fin en un intervalo
+        const intervaloHorario = `${dateStart} - ${dateEnd}`;
+
         return{
-          dateStart,
-          dateEnd,
+          intervaloHorario,
           precipitation: tiempo.getElementsByTagName("precipitation")[0]?.getAttribute("probability") || "",
           humidity: tiempo.getElementsByTagName("humidity")[0]?.getAttribute("value") || "",
-          clouds: tiempo.getElementsByTagName("clouds")[0]?.getAttribute("all") || "",
+          clouds: tiempo.getElementsByTagName("clouds")[0]?.getAttribute("all") || ""
         }
       })
 

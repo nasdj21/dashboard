@@ -1,6 +1,5 @@
 export default interface item{
-    dateStart: String;
-    dateEnd: String;
+    intervaloHorario: String;
     precipitation: String;
     humidity: String;
     clouds: String;

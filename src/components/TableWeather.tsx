@@ -28,11 +28,10 @@ export default function BasicTable(props: MyProp) {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-          <TableCell>Hora de Inicio</TableCell>
-            <TableCell align="right">Hora de Fin</TableCell>
-            <TableCell align="right">Precipitación</TableCell>
-            <TableCell align="right">Humedad</TableCell>
-            <TableCell align="right">Nubosidad</TableCell>
+          <TableCell>Intervalo horario</TableCell>
+            <TableCell align="center">Precipitación</TableCell>
+            <TableCell align="center">Humedad</TableCell>
+            <TableCell align="center">Nubosidad</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -42,12 +41,11 @@ export default function BasicTable(props: MyProp) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.dateStart}
+                {row.intervaloHorario}
               </TableCell>
-              <TableCell align="right">{row.dateEnd}</TableCell>
-              <TableCell align="right">{row.precipitation}</TableCell>
-              <TableCell align="right">{row.humidity}</TableCell>
-              <TableCell align="right">{row.clouds}</TableCell>
+              <TableCell align="center">{row.precipitation}</TableCell>
+              <TableCell align="center">{row.humidity}</TableCell>
+              <TableCell align="center">{row.clouds}</TableCell>
             </TableRow>
           ))}
         </TableBody>
